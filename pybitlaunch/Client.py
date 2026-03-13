@@ -3,6 +3,7 @@ from .SSHKeys import SSHKeyService, SSHKey
 from .Transactions import TransactionService, Transaction
 from .Servers import ServerService, Server, Port, RebuildImage
 from .CreateOptions import CreateOptionsService
+from .Domains import DomainsService, Record
 from .BaseAPI import BaseAPI
 
 # Client object to interface with the API
@@ -14,4 +15,5 @@ class Client(object):
         self.Transactions = TransactionService(t)
         self.Servers = ServerService(t)
         self.CreateOptions = CreateOptionsService(t)
+        self.Domains = DomainsService(t)
 
