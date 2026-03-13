@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pybitlaunch"
+version = "1.1.1"
+description = "BitLaunch API Python SDK (with DNS support)"
+requires-python = ">=3.6"
+dependencies = ["requests>=2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=6.0", "pytest-cov>=3.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v"

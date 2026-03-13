@@ -1,0 +1,9 @@
+# Test / build
+.venv/
+venv/
+.coverage
+htmlcov/
+*.egg-info/
+__pycache__/
+*.pyc
+.pytest_cache/
