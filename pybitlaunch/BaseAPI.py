@@ -112,7 +112,11 @@ class BaseAPI(object):
             data = req.json()
         except ValueError as e:
             if req.status_code != 200:
-                raise JSONReadError("Read failed from BitLaunch: %s" % str(e))
+                body_preview = (req.text or "")[:200].strip() or "(empty body)"
+                raise JSONReadError(
+                    "BitLaunch API returned HTTP %s: %s. Response body: %s"
+                    % (req.status_code, req.reason or "Error", body_preview)
+                )
             else:
                 # Return None if Query was success but has no return values
                 return None
